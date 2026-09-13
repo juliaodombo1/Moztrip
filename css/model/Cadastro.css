@@ -1,0 +1,414 @@
+
+/* =====================================
+   MODAL DE CADASTRO
+===================================== */
+
+.modal {
+    display: none;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.65);
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+
+    z-index: 9999;
+}
+
+
+/* Modal ativo */
+
+.modal.active {
+    display: flex;
+}
+
+
+/* =====================================
+   CONTEÚDO
+===================================== */
+
+.cadastro-modal {
+
+    position: relative;
+
+    width: 100%;
+    max-width: 480px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: #ffffff;
+
+    border-radius: 15px;
+
+    padding: 30px;
+
+    box-sizing: border-box;
+
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+
+}
+
+
+/* =====================================
+   BOTÃO FECHAR
+===================================== */
+
+.close-modal {
+
+    position: absolute;
+
+    top: 15px;
+    right: 20px;
+
+    font-size: 30px;
+
+    color: #555;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.close-modal:hover {
+
+    color: #00a651;
+
+}
+
+
+/* =====================================
+   CABEÇALHO
+===================================== */
+
+.cadastro-header {
+
+    text-align: center;
+
+    margin-bottom: 25px;
+
+}
+
+
+.cadastro-header i {
+
+    font-size: 35px;
+
+    color: #00a651;
+
+    margin-bottom: 10px;
+
+}
+
+
+.cadastro-header h2 {
+
+    margin: 0;
+
+    color: #222;
+
+    font-size: 28px;
+
+}
+
+
+.cadastro-header p {
+
+    margin-top: 5px;
+
+    color: #777;
+
+}
+
+
+/* =====================================
+   FORMULÁRIO
+===================================== */
+
+.form-group {
+
+    margin-bottom: 17px;
+
+}
+
+
+.form-group label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #333;
+
+}
+
+
+/* =====================================
+   INPUTS
+===================================== */
+
+.input-icon {
+
+    position: relative;
+
+}
+
+
+.input-icon i {
+
+    position: absolute;
+
+    left: 14px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #777;
+
+}
+
+
+.input-icon input,
+.input-icon select {
+
+    width: 100%;
+
+    height: 48px;
+
+    padding: 0 15px 0 42px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    box-sizing: border-box;
+
+    font-size: 14px;
+
+    background: #fff;
+
+}
+
+
+.input-icon input:focus,
+.input-icon select:focus {
+
+    border-color: #00a651;
+
+    box-shadow: 0 0 0 2px rgba(0, 166, 81, 0.1);
+
+}
+
+
+/* =====================================
+   TERMOS
+===================================== */
+
+.termos {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 8px;
+
+    margin: 18px 0;
+
+    font-size: 13px;
+
+    color: #555;
+
+}
+
+
+.termos input {
+
+    margin-top: 3px;
+
+}
+
+
+/* =====================================
+   BOTÃO CRIAR CONTA
+===================================== */
+
+.btn-criar-conta {
+
+    width: 100%;
+
+    height: 50px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #00a651;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.btn-criar-conta:hover {
+
+    background: #008c44;
+
+    transform: translateY(-1px);
+
+}
+
+
+.btn-criar-conta i {
+
+    margin-right: 8px;
+
+}
+
+
+/* =====================================
+   RESPONSIVO
+===================================== */
+
+@media (max-width: 600px) {
+
+    .cadastro-modal {
+
+        padding: 22px;
+
+        max-height: 92vh;
+
+    }
+
+
+    .cadastro-header h2 {
+
+        font-size: 24px;
+
+    }
+
+}
+
+
+/* ENTRAR*/
+
+.login-modal {
+    position: relative;
+    width: 100%;
+    max-width: 430px;
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 30px;
+    box-sizing: border-box;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.login-header i {
+    font-size: 45px;
+    color: #00a651;
+    margin-bottom: 10px;
+}
+
+.login-header h2 {
+    margin: 0;
+    color: #222;
+    font-size: 27px;
+}
+
+.login-header p {
+    color: #777;
+    margin-top: 7px;
+}
+
+.login-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0 20px;
+    font-size: 13px;
+}
+
+.login-options label {
+    color: #555;
+}
+
+.login-options a {
+    color: #00a651;
+    text-decoration: none;
+}
+
+.login-options a:hover {
+    text-decoration: underline;
+}
+
+.btn-entrar {
+    width: 100%;
+    height: 50px;
+    border: none;
+    border-radius: 8px;
+    background: #00a651;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-entrar:hover {
+    background: #008c44;
+    transform: translateY(-1px);
+}
+
+.btn-entrar i {
+    margin-right: 8px;
+}
+
+.login-register {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #666;
+}
+
+.login-register a {
+    color: #00a651;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-register a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>MozTrip - Painel do Turista</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7f8;
+        }
+
+        .painel-header {
+            background: #011524;
+            color: white;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #00ff66;
+        }
+
+        .utilizador {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .utilizador i {
+            font-size: 30px;
+        }
+
+        .btn-sair {
+            background: #00a651;
+            color: white;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+
+        .painel-container {
+            padding: 40px;
+        }
+
+        .boas-vindas {
+            margin-bottom: 30px;
+        }
+
+        .boas-vindas h1 {
+            margin-bottom: 8px;
+        }
+
+        .boas-vindas p {
+            color: #666;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow:
+                0 4px 15px rgba(0,0,0,0.08);
+
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card i {
+            font-size: 30px;
+            color: #00a651;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin: 5px 0;
+        }
+
+        .card p {
+            color: #777;
+            font-size: 14px;
+        }
+
+    </style>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+
+<body>
+
+    <header class="painel-header">
+
+        <div class="logo">
+            MozTrip
+        </div>
+
+        <div class="utilizador">
+
+            <i class="fa-solid fa-circle-user"></i>
+
+            <span id="nomeUtilizador">
+                Utilizador
+            </span>
+
+            <button class="btn-sair" id="btnSair">
+                Sair
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <main class="painel-container">
+
+        <section class="boas-vindas">
+
+            <h1>
+                Bem-vindo ao MozTrip! 👋
+            </h1>
+
+            <p>
+                Encontre destinos, hotéis, restaurantes
+                e experiências em Moçambique.
+            </p>
+
+        </section>
+
+
+        <section class="cards">
+
+            <div class="card">
+
+                <i class="fa-solid fa-map-location-dot"></i>
+
+                <h3>Explorar destinos</h3>
+
+                <p>
+                    Descubra os melhores destinos
+                    turísticos de Moçambique.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <i class="fa-solid fa-hotel"></i>
+
+                <h3>Hotéis</h3>
+
+                <p>
+                    Encontre hotéis e alojamentos.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <i class="fa-solid fa-utensils"></i>
+
+                <h3>Restaurantes</h3>
+
+                <p>
+                    Descubra restaurantes próximos
+                    dos seus destinos.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <i class="fa-solid fa-person-hiking"></i>
+
+                <h3>Experiências</h3>
+
+                <p>
+                    Encontre actividades e experiências.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <i class="fa-solid fa-car"></i>
+
+                <h3>Rent-a-Car</h3>
+
+                <p>
+                    Encontre veículos para alugar.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <i class="fa-solid fa-user-gear"></i>
+
+                <h3>Meu perfil</h3>
+
+                <p>
+                    Consulte e altere os seus dados.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script>
+
+        const utilizador =
+            JSON.parse(
+                localStorage.getItem("utilizadorLogado")
+            );
+
+
+        if (!utilizador) {
+
+            window.location.href = "../index.html";
+
+        }
+
+
+        if (utilizador) {
+
+            document.getElementById(
+                "nomeUtilizador"
+            ).textContent = utilizador.email;
+
+        }
+
+
+        document.getElementById(
+            "btnSair"
+        ).addEventListener("click", function () {
+
+            localStorage.removeItem(
+                "utilizadorLogado"
+            );
+
+            window.location.href =
+                "../index.html";
+
+        });
+
+    </script>
+
+</body>
+
+</html>

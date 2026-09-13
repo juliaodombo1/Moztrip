@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MozTrip - Descubra Moçambique</title>
+
+    <!--css directrizes-->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/destinos.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/model/Cadastro.css">
+
+
+
+    <!-- JavaScript directrizes--> 
+     
+    <script src="js/menu.js" defer></script>
+    <script src="js/search.js" defer></script>
+    <script src="js/script.js"defer></script>
+    <script src="js/Cadastros.js"defer></script>
+    <script src="js/Login.js"defer></script>
+    <script src = "js/Auth.js"defer></script>
+
+
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+
+<body>
+
+<!-- MODAL DE LOGIN -->
+<div class="modal" id="loginModal">
+
+    <div class="modal-content login-modal">
+
+        <span class="close-modal" id="CloseLogin">&times;</span>
+
+        <div class="login-header">
+            <i class="fa-solid fa-user-circle"></i>
+            <h2>Entrar no MozTrip</h2>
+            <p>Aceda à sua conta</p>
+        </div>
+
+        <form id="loginForm">
+
+            <div class="form-group">
+                <label for="loginEmail">Email</label>
+
+                <div class="input-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input 
+                        type="email" 
+                        id="loginEmail"
+                        name="loginEmail"
+                        placeholder="Digite o seu email"
+                        required
+                    >
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="loginSenha">Palavra-passe</label>
+
+                <div class="input-icon">
+                    <i class="fa-solid fa-lock"></i>
+                    <input 
+                        type="password" 
+                        id="loginSenha"
+                        name="loginSenha"
+                        placeholder="Digite a sua palavra-passe"
+                        required
+                    >
+                </div>
+            </div>
+
+            <div class="login-options">
+
+                <label>
+                    <input type="checkbox" id="lembrar">
+                    Lembrar-me
+                </label>
+
+                <a href="#" id="esqueciSenha">
+                    Esqueci a palavra-passe
+                </a>
+
+            </div>
+
+            <button type="submit" class="btn-entrar">
+                <i class="fa-solid fa-right-to-bracket"></i>
+                Entrar
+            </button>
+
+            <div class="login-register">
+                <p>
+                    Ainda não tem uma conta?
+                    <a href="#" id="openRegisterFromLogin">
+                        Registar
+                    </a>
+                </p>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+    <!-- ================= MODAL DE CADASTRO ================= -->
+
+<div class="modal" id="registarModal">
+
+    <div class="modal-content cadastro-modal">
+
+        <!-- Botão fechar -->
+        <span class="close-modal" id="CloseRegister">&times;</span>
+
+        <!-- Cabeçalho -->
+        <div class="cadastro-header">
+            <i class="fa-solid fa-user-plus"></i>
+            <h2>Criar Conta</h2>
+            <p>Junte-se ao MozTrip</p>
+        </div>
+
+        <form id="cadastroForm">
+
+            <!-- TIPO DE USUÁRIO -->
+            <div class="form-group">
+
+                <label for="tipoUsuario">
+                    Tipo de conta
+                </label>
+
+                <div class="input-icon">
+                    <i class="fa-solid fa-users"></i>
+
+                    <select id="tipoUsuario" name="tipoUsuario" required>
+
+                        <option value="">
+                            Selecione o tipo de conta
+                        </option>
+
+                        <option value="turista">
+                            Turista
+                        </option>
+
+                        <option value="guia">
+                            Guia Turístico
+                        </option>
+
+                        <option value="rentacar">
+                            Rent-a-Car
+                        </option>
+
+                        <option value="instancia">
+                            Instância Turística
+                        </option>
+
+                        <option value="hotel">
+                            Hotel
+                        </option>
+
+                        <option value="agencia">
+                            Agência de Viagens
+                        </option>
+
+                        <option value="restaurante">
+                            Restaurante
+                        </option>
+
+                        <option value="experiencia">
+                            Actividades e Experiências
+                        </option>
+
+                        <option value="outro">
+                            Outro
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- CAMPOS DINÂMICOS -->
+
+            <div id="camposCadastro">
+
+                <!-- Os campos serão criados pelo JavaScript -->
+
+            </div>
+
+
+            <!-- EMAIL -->
+
+            <div class="form-group">
+
+                <label for="email">
+                    Email
+                </label>
+
+                <div class="input-icon">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Digite o seu email"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- TELEFONE -->
+
+            <div class="form-group">
+
+                <label for="telefone">
+                    Telefone
+                </label>
+
+                <div class="input-icon">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    <input
+                        type="tel"
+                        id="telefone"
+                        name="telefone"
+                        placeholder="+258 84 000 0000"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- SENHA -->
+
+            <div class="form-group">
+
+                <label for="senha">
+                    Palavra-passe
+                </label>
+
+                <div class="input-icon">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <input
+                        type="password"
+                        id="senha"
+                        name="senha"
+                        placeholder="Digite a sua palavra-passe"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- CONFIRMAR SENHA -->
+
+            <div class="form-group">
+
+                <label for="confirmarSenha">
+                    Confirmar palavra-passe
+                </label>
+
+                <div class="input-icon">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <input
+                        type="password"
+                        id="confirmarSenha"
+                        name="confirmarSenha"
+                        placeholder="Confirme a sua palavra-passe"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- TERMOS -->
+
+            <div class="termos">
+
+                <input
+                    type="checkbox"
+                    id="termos"
+                    required
+                >
+
+                <label for="termos">
+                    Aceito os termos e condições do MozTrip.
+                </label>
+
+            </div>
+
+
+            <!-- BOTÃO -->
+
+            <button
+                type="submit"
+                class="btn-criar-conta"
+            >
+
+                <i class="fa-solid fa-user-plus"></i>
+
+                Criar conta
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+    <!-- Navbar -->
+    <header class="navbar">
+
+        <div class="logo">
+            <i class="fa-solid fa-location-dot logo-icon"></i>
+            <div class="logo-text">     
+                <h1>Moz<span>Trip</span></h1>
+                <span class="logo-sub">Descubra Moçambique</span>
+            </div>
+        </div>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+        <nav id="mainNav">
+            <ul>
+                <li><a href="#" class="active">Início</a></li>
+                <li><a href="pages/hoteis.html">Hotéis</a></li>
+                <li><a href="pages/experiencias.html">Experiências</a></li>
+                <li><a href="pages/pacotes.html">Pacotes</a></li>
+                <li><a href="pages/transportes.html">Transportes</a></li>
+                <li><a href="#">Aluguer de Viaturas</a></li>
+                <li><a href="pages/restaurantes.html">Restaurantes</a></li>
+                <li class="dropdown">
+                    <a href="#">Mais <i class="fa-solid fa-chevron-down"></i></a>
+                </li>
+            </ul>
+        </nav>
+
+    <div class="nav-side">
+
+    <div class="lang-select">
+        <img src="imagens/Bandeira/BandeiraMocambique.png"
+             alt="Moçambique"
+             class="flag">
+        <span>MZN</span>
+        <i class="fa-solid fa-chevron-down"></i>
+    </div>
+
+    <a href="#" class="fav-link">
+        <i class="fa-regular fa-heart"></i>
+        Favoritos
+    </a>
+
+    <!-- MENU DO UTILIZADOR -->
+
+    <div class="user-menu" id="userMenu">
+
+        <button class="user-menu-button" id="userMenuButton">
+
+            <i class="fa-solid fa-circle-user"></i>
+
+            <span id="userName">
+                Utilizador
+            </span>
+
+            <i class="fa-solid fa-chevron-down"></i>
+
+        </button>
+
+        <div class="user-dropdown" id="userDropdown">
+
+            <a href="#">
+                <i class="fa-solid fa-user"></i>
+                Meu Perfil
+            </a>
+
+            <a href="#">
+                <i class="fa-regular fa-heart"></i>
+                Favoritos
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-calendar-check"></i>
+                Minhas Reservas
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-suitcase"></i>
+                Minhas Viagens
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-gear"></i>
+                Configurações
+            </a>
+
+            <hr>
+
+            <a href="#" id="menuSair">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Sair
+            </a>
+
+        </div>
+
+    </div>
+
+    <button class="login-btn" id="openLogin">
+        Entrar
+    </button>
+
+    <button class="register-btn" id="openRegister">
+        Registar
+    </button>
+
+</div>
+
+    </header>
+
+
+
+    
+
+    <!-- Hero Section -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>Descubra Moçambique</h1>
+            <h2>Viva a experiência</h2>
+
+            <p>Hotéis, passeios, experiências e muito mais.<br>
+            Reserve agora e tenha uma viagem inesquecível.</p>
+
+            <ul class="hero-badges">
+                <li><i class="fa-solid fa-shield-halved"></i> Reservas seguras<br><span>e confiáveis</span></li>
+                <li><i class="fa-solid fa-headset"></i> Suporte 24/7<br><span>em Moçambique</span></li>
+                <li><i class="fa-solid fa-tags"></i> Melhores preços<br><span>garantidos</span></li>
+            </ul>
+
+        </div>
+
+        <!-- Caixa de pesquisa -->
+        <div class="search-box">
+
+            <div class="search-tabs">
+                <button class="tab active" data-tab="hoteis"><i class="fa-solid fa-bed"></i> Hotéis</button>
+                <button class="tab" data-tab="experiencias"><i class="fa-solid fa-camera"></i> Experiências</button>
+                <button class="tab" data-tab="pacotes"><i class="fa-solid fa-gift"></i> Pacotes</button>
+                <button class="tab" data-tab="transportes"><i class="fa-solid fa-car"></i> Transportes</button>
+            </div>
+
+            <form class="search-form">
+
+                <label for="destino">Destino</label>
+                <div class="input-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <input type="text" id="destino" placeholder="Para onde quer viajar?">
+                </div>
+
+                <div class="search-row">
+                    <div>
+                        <label for="checkin">Check-in</label>
+                        <div class="input-icon">
+                            <i class="fa-regular fa-calendar"></i>
+                            <input type="text" id="checkin" placeholder="Data de entrada">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="checkout">Check-out</label>
+                        <div class="input-icon">
+                            <i class="fa-regular fa-calendar"></i>
+                            <input type="text" id="checkout" placeholder="Data de saída">
+                        </div>
+                    </div>
+                </div>
+
+                <label for="hospedes">Hóspedes</label>
+                <div class="input-icon">
+                    <i class="fa-solid fa-user"></i>
+                    <input type="text" id="hospedes" placeholder="2 hóspedes, 1 quarto">
+                </div>
+
+                <button type="submit" class="search-btn">Pesquisar</button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+    <!-- Categorias -->
+    <section class="categorias">
+        <a href="#" class="categoria">
+            <span class="icon-circle blue"><i class="fa-solid fa-building"></i></span>
+            <p>Hotéis</p>
+        </a>
+        <a href="#" class="categoria">
+            <span class="icon-circle green"><i class="fa-solid fa-camera-retro"></i></span>
+            <p>Experiências</p>
+        </a>
+        <a href="#" class="categoria">
+            <span class="icon-circle peach"><i class="fa-solid fa-umbrella-beach"></i></span>
+            <p>Passeios</p>
+        </a>
+        <a href="#" class="categoria">
+            <span class="icon-circle blue"><i class="fa-solid fa-car-side"></i></span>
+            <p>Aluguer de Viaturas</p>
+        </a>
+        <a href="#" class="categoria">
+            <span class="icon-circle green"><i class="fa-solid fa-bus"></i></span>
+            <p>Transfers</p>
+        </a>
+        <a href="#" class="categoria">
+            <span class="icon-circle peach"><i class="fa-solid fa-utensils"></i></span>
+            <p>Restaurantes</p>
+        </a>
+        <a href="#" class="categoria">
+            <span class="icon-circle blue"><i class="fa-solid fa-user-tie"></i></span>
+            <p>Guias Turísticos</p>
+        </a>
+        <a href="#" class="categoria">
+            <span class="icon-circle green"><i class="fa-solid fa-person-hiking"></i></span>
+            <p>Actividades</p>
+        </a>
+        <a href="#" class="categoria">
+            <span class="icon-circle purple"><i class="fa-solid fa-gift"></i></span>
+            <p>Pacotes</p>
+        </a>
+        <a href="#" class="categoria">
+            <span class="icon-circle gray"><i class="fa-solid fa-grip"></i></span>
+            <p>Mais</p>
+        </a>
+    </section>
+
+    <!-- Destinos populares -->
+    <section class="destinos">
+
+        <div class="destinos-header">
+            <h2>Destinos populares</h2>
+            <a href="#" class="ver-todos">Ver todos <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="destinos-grid">
+
+            <a href="#" class="destino-card">
+                <img src="imagens/destinos/bazaruto.jpg" alt="Bazaruto">
+                <div class="destino-info">
+                    <h3><i class="fa-solid fa-location-dot"></i> Bazaruto</h3>
+                    <div class="destino-meta">
+                        <span>Inhambane</span>
+                        <span class="rating"><i class="fa-solid fa-star"></i> 4.8 (126)</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="destino-card">
+                <img src="imagens/destinos/vilanculos.jpg" alt="Vilankulo">
+                <div class="destino-info">
+                    <h3><i class="fa-solid fa-
+                        location-dot"></i> Vilankulo</h3>
+                    <div class="destino-meta">
+                        <span>Inhambane</span>
+                        <span class="rating"><i class="fa-solid fa-star"></i> 4.7 (98)</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="destino-card">
+                <img src="imagens/destinos/tofo-at-its-best.jpg" alt="Tofo">
+                <div class="destino-info">
+                    <h3><i class="fa-solid fa-location-dot"></i> Tofo</h3>
+                    <div class="destino-meta">
+                        <span>Inhambane</span>
+                        <span class="rating"><i class="fa-solid fa-star"></i> 4.6 (87)</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="destino-card">
+                <img src="imagens/destinos/inhaca.jpg" alt="Maputo">
+                <div class="destino-info">
+                    <h3><i class="fa-solid fa-location-dot"></i> Maputo</h3>
+                    <div class="destino-meta">
+                        <span>Maputo</span>
+                        <span class="rating"><i class="fa-solid fa-star"></i> 4.5 (112)</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="destino-card">
+                <img src="imagens/destinos/images.jpeg" alt="Gorongosa">
+                <div class="destino-info">
+                    <h3><i class="fa-solid fa-location-dot"></i> Gorongosa</h3>
+                    <div class="destino-meta">
+                        <span>Sofala</span>
+                        <span class="rating"><i class="fa-solid fa-star"></i> 4.9 (74)</span>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+
+        <button class="destinos-next" aria-label="Ver mais destinos"><i class="fa-solid fa-arrow-right"></i></button>
+
+    </section>
+
+    <!-- Faixa de confiança -->
+    <section class="confianca">
+        <div class="confianca-item">
+            <i class="fa-solid fa-shield-halved"></i>
+            <div>
+                <h4>Pagamento seguro</h4>
+                <p>Os seus dados estão protegidos</p>
+            </div>
+        </div>
+        <div class="confianca-item">
+            <i class="fa-regular fa-credit-card"></i>
+            <div>
+                <h4>Várias formas de pagamento</h4>
+                <p>M-Pesa, e-Mola, Cartão e mais</p>
+            </div>
+        </div>
+        <div class="confianca-item">
+            <i class="fa-regular fa-calendar-check"></i>
+            <div>
+                <h4>Cancelamento Flexível</h4>
+                <p>Cancelamento fácil e rápido</p>
+            </div>
+        </div>
+        <div class="confianca-item">
+            <i class="fa-solid fa-headset"></i>
+            <div>
+                <h4>Suporte ao Cliente</h4>
+                <p>Estamos aqui para ajudar</p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
