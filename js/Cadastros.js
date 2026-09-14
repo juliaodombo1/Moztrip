@@ -724,14 +724,35 @@ if (utilizadoresExiste){
   return;
 
 }
+/*usuarios definicao*/
+
+let nome = "";
+
+if (document.getElementById("nome")) {
+  nome = document.getElementById("nome").value;
+}
+else if (document.getElementById("nomeEmpresa")) {
+  nome = document.getElementById("nomeEmpresa").value;
+}
+else if (document.getElementById("nomeHotel")) {
+  nome = document.getElementById("nomeHotel").value;
+}
+else if (document.getElementById("nomeInstancia")) {
+  nome = document.getElementById("nomeInstancia").value;
+}
+else if (document.getElementById("nomeAgencia")) {
+  nome = document.getElementById("nomeAgencia").value;
+}
+else if (document.getElementById("nomeRestaurante")) {
+  nome = document.getElementById("nomeRestaurante").value;
+}
 
 const novoUtilizador = {
+  nome: nome,
   tipo: tipo,
-  email:email,
-  telefone:telefone,
-  senha:senha,
-
-
+  email: email,
+  telefone: telefone,
+  senha: senha
 };
 
 utilizadores.push(novoUtilizador);

@@ -69,7 +69,8 @@ loginForm.addEventListener("submit", function (event) {
         );
 
     });
-
+console.log("UTILIZADOR ENCONTRADO:", utilizador);
+console.log("DADOS DO UTILIZADOR:", JSON.stringify(utilizador, null, 2));
 
     // Login inválido
     if (!utilizador) {
