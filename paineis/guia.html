@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Painel do Guia - MozTrip</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="../css/paineis.css">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+
+        <div class="painel-logo">
+            <i class="fa-solid fa-location-dot"></i>
+
+            <div>
+                <h2>Moz<span>Trip</span></h2>
+                <small>Painel do Guia</small>
+            </div>
+        </div>
+
+        <div class="perfil-sidebar">
+            <div class="perfil-avatar">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div>
+                <h3 id="nomeUtilizador">Guia Turístico</h3>
+                <span>Guia Turístico</span>
+            </div>
+        </div>
+
+        <nav class="menu-painel">
+
+            <a href="#" class="menu-item active">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="#" class="menu-item">
+                <i class="fa-solid fa-user"></i>
+                <span>Meu Perfil</span>
+            </a>
+
+            <a href="#" class="menu-item">
+                <i class="fa-solid fa-map-location-dot"></i>
+                <span>Meus Roteiros</span>
+            </a>
+
+            <a href="#" class="menu-item">
+                <i class="fa-solid fa-plus"></i>
+                <span>Criar Roteiro</span>
+            </a>
+
+            <a href="#" class="menu-item">
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>Reservas</span>
+            </a>
+
+            <a href="#" class="menu-item">
+                <i class="fa-solid fa-users"></i>
+                <span>Meus Clientes</span>
+            </a>
+
+            <a href="#" class="menu-item">
+                <i class="fa-solid fa-star"></i>
+                <span>Avaliações</span>
+            </a>
+
+            <a href="#" class="menu-item">
+                <i class="fa-solid fa-gear"></i>
+                <span>Definições</span>
+            </a>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <a href="../index.html" class="menu-item voltar">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>Voltar ao MozTrip</span>
+            </a>
+
+            <a href="#" class="menu-item sair">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Terminar Sessão</span>
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <main class="main-content">
+
+        <header class="painel-header">
+
+            <div>
+                <h1>Olá, <span id="saudacaoUtilizador">Guia</span>! 👋</h1>
+
+                <p>
+                    Gerencie os seus roteiros e actividades turísticas.
+                </p>
+            </div>
+
+            <div class="header-actions">
+
+                <button class="notificacao">
+                    <i class="fa-regular fa-bell"></i>
+                    <span></span>
+                </button>
+
+                <div class="header-avatar">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <section class="resumo-cards">
+
+            <div class="resumo-card">
+                <div class="resumo-icon azul">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                </div>
+
+                <div>
+                    <span>Roteiros</span>
+                    <h2>0</h2>
+                </div>
+            </div>
+
+            <div class="resumo-card">
+                <div class="resumo-icon verde">
+                    <i class="fa-solid fa-calendar-check"></i>
+                </div>
+
+                <div>
+                    <span>Reservas</span>
+                    <h2>0</h2>
+                </div>
+            </div>
+
+            <div class="resumo-card">
+                <div class="resumo-icon laranja">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+
+                <div>
+                    <span>Clientes</span>
+                    <h2>0</h2>
+                </div>
+            </div>
+
+            <div class="resumo-card">
+                <div class="resumo-icon roxo">
+                    <i class="fa-solid fa-star"></i>
+                </div>
+
+                <div>
+                    <span>Avaliação</span>
+                    <h2>0.0</h2>
+                </div>
+            </div>
+
+        </section>
+
+
+        <section class="publicar-box">
+
+            <div class="publicar-icon">
+                <i class="fa-solid fa-map-location-dot"></i>
+            </div>
+
+            <div class="publicar-texto">
+
+                <h2>Crie um novo roteiro</h2>
+
+                <p>
+                    Crie experiências turísticas e apresente
+                    os melhores lugares de Moçambique.
+                </p>
+
+            </div>
+
+            <button class="btn-publicar">
+                <i class="fa-solid fa-plus"></i>
+                Criar roteiro
+            </button>
+
+        </section>
+
+
+        <section class="experiencias-section">
+
+            <div class="section-title">
+
+                <div>
+                    <h2>Meus roteiros</h2>
+
+                    <p>
+                        Os roteiros e experiências que disponibiliza.
+                    </p>
+                </div>
+
+                <a href="#">
+                    Ver todos
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+
+            <div class="experiencias-vazio">
+
+                <div class="vazio-icon">
+                    <i class="fa-solid fa-map"></i>
+                </div>
+
+                <h3>Ainda não possui roteiros</h3>
+
+                <p>
+                    Crie o seu primeiro roteiro turístico.
+                </p>
+
+                <button class="btn-publicar">
+                    <i class="fa-solid fa-plus"></i>
+                    Criar primeiro roteiro
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>
