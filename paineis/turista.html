@@ -14,7 +14,60 @@
     <link rel="stylesheet" href="../css/paineis.css">
 </head>
 
+
+
 <body>
+
+    <div id="modalExperiencia" class="modal-experiencia">
+
+    <div class="modal-conteudo">
+
+        <h2>Publicar Experiência</h2>
+
+        <form id="formExperiencia">
+
+            <input
+                type="text"
+                id="tituloExperiencia"
+                placeholder="Título da experiência"
+                required
+            >
+
+            <textarea
+                id="descricaoExperiencia"
+                placeholder="Conte a sua experiência..."
+                rows="5"
+                required
+            ></textarea>
+
+            <label>Fotos e Vídeos</label>
+
+            <input
+                type="file"
+                id="ficheirosExperiencia"
+                multiple
+                accept="image/*,video/*"
+            >
+
+            <div id="previewFicheiros"></div>
+
+            <div class="acoes-modal">
+
+                <button type="button" id="fecharModal">
+                    Cancelar
+                </button>
+
+                <button type="submit">
+                    Publicar
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
 
     <!-- =========================
          SIDEBAR
