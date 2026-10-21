@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Experiências | MozTrip</title>
+
+    <link rel="stylesheet" href="../css/experiencias.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <script src="../js/Experiencias.js" defer></script>
+</head>
+
+<body>
+
+    <header class="experiencias-header">
+        <a href="../index.html" class="logo">
+            <i class="fa-solid fa-location-dot"></i>
+            Moz<span>Trip</span>
+        </a>
+
+        <a href="../index.html" class="voltar">
+            <i class="fa-solid fa-arrow-left"></i>
+            Página inicial
+        </a>
+    </header>
+
+    <main class="experiencias-container">
+
+        <section class="experiencias-intro">
+            <span class="etiqueta">COMUNIDADE MOZTRIP</span>
+
+            <h1>Partilha as tuas <span>experiências</span></h1>
+
+            <p>
+                Descobre Moçambique através das histórias,
+                fotografias e aventuras de outros viajantes.
+            </p>
+        </section>
+
+        <!-- Formulário de publicação -->
+        <section class="publicar-card">
+
+            <h2>
+                <i class="fa-solid fa-camera"></i>
+                Partilhar uma experiência
+            </h2>
+
+            <form id="formExperiencia">
+
+                <div class="campo">
+                    <label for="tituloExperiencia">Título</label>
+
+                    <input
+                        type="text"
+                        id="tituloExperiencia"
+                        placeholder="Ex.: Um fim de semana em Tofo"
+                        required
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="descricaoExperiencia">Descrição</label>
+
+                    <textarea
+                        id="descricaoExperiencia"
+                        rows="4"
+                        placeholder="Conta-nos como foi a tua experiência..."
+                        required
+                    ></textarea>
+                </div>
+
+                <div class="campo">
+                    <label for="imagemExperiencia">Fotografia</label>
+
+                    <input
+                        type="file"
+                        id="imagemExperiencia"
+                        accept="image/*"
+                        required
+                    >
+
+                    <small>
+                        Selecciona uma fotografia da tua experiência.
+                    </small>
+                </div>
+
+                <div id="previewImagem" class="preview-imagem"></div>
+
+                <button type="submit" class="btn-publicar">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    Publicar experiência
+                </button>
+
+                <p id="mensagemExperiencia" role="status"></p>
+
+            </form>
+        </section>
+
+        <!-- Feed -->
+        <section class="feed-section">
+
+            <div class="feed-titulo">
+                <div>
+                    <h2>Experiências dos viajantes</h2>
+                    <p>Histórias reais, lugares inesquecíveis.</p>
+                </div>
+
+                <i class="fa-solid fa-earth-africa"></i>
+            </div>
+
+            <div id="feedExperiencias" class="feed-grid"></div>
+
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+        <a href="../index.html">Moz<span>Trip</span></a>
+        <p>Descubra Moçambique. Viva a experiência.</p>
+    </footer>
+
+</body>
+</html>

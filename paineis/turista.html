@@ -18,49 +18,63 @@
 
 <body>
 
-    <div id="modalExperiencia" class="modal-experiencia">
+    
+<!-- Modal para publicar experiência -->
+<div id="modalExperiencia" class="modal-experiencia">
 
     <div class="modal-conteudo">
 
-        <h2>Publicar Experiência</h2>
+        <h2>Partilhar uma experiência</h2>
 
         <form id="formExperiencia">
 
-            <input
-                type="text"
-                id="tituloExperiencia"
-                placeholder="Título da experiência"
-                required
-            >
+            <div class="campo">
+                <label for="tituloExperiencia">Título</label>
+                <input
+                    type="text"
+                    id="tituloExperiencia"
+                    placeholder="Ex.: Um fim de semana em Tofo"
+                    required
+                >
+            </div>
 
-            <textarea
-                id="descricaoExperiencia"
-                placeholder="Conte a sua experiência..."
-                rows="5"
-                required
-            ></textarea>
+            <div class="campo">
+                <label for="descricaoExperiencia">Descrição</label>
+                <textarea
+                    id="descricaoExperiencia"
+                    rows="4"
+                    placeholder="Conta-nos como foi a tua experiência..."
+                    required
+                ></textarea>
+            </div>
 
-            <label>Fotos e Vídeos</label>
+            <div class="campo">
+                <label for="imagemExperiencia">Fotografia</label>
+                <input
+                    type="file"
+                    id="imagemExperiencia"
+                    accept="image/*"
+                    required
+                >
+                <small>
+                    Selecciona uma fotografia da tua experiência.
+                    Máximo: 2 MB.
+                </small>
+            </div>
 
-            <input
-                type="file"
-                id="ficheirosExperiencia"
-                multiple
-                accept="image/*,video/*"
-            >
+            <div id="previewImagem" class="preview-imagem"></div>
 
-            <div id="previewFicheiros"></div>
+            <p id="mensagemExperiencia" role="status"></p>
 
             <div class="acoes-modal">
-
                 <button type="button" id="fecharModal">
                     Cancelar
                 </button>
 
-                <button type="submit">
-                    Publicar
+                <button type="submit" class="btn-publicar">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    Publicar experiência
                 </button>
-
             </div>
 
         </form>
@@ -210,9 +224,9 @@
                 </div>
 
                 <div>
-                    <span>Experiências</span>
-                    <h2>0</h2>
-                </div>
+    <span>Experiências</span>
+    <h2 id="totalExperiencias">0</h2>
+</div>
 
             </div>
 
@@ -294,55 +308,46 @@
              EXPERIÊNCIAS
         ========================== -->
 
-        <section class="experiencias-section">
+ 
+<section class="experiencias-section">
 
-            <div class="section-title">
+    <div class="section-title">
+        <div>
+            <h2>Minhas experiências</h2>
+            <p>As experiências que partilhou com a comunidade.</p>
+        </div>
+    </div>
 
-                <div>
-                    <h2>Minhas experiências</h2>
+    <!-- Aqui serão apresentados os cards das experiências do turista -->
+    <div id="listaExperiencias" class="feed-grid"></div>
 
-                    <p>
-                        As experiências que partilhou com a comunidade.
-                    </p>
-                </div>
+    <!-- Aparece quando o turista ainda não tem publicações -->
+    <div id="experienciasVazio" class="experiencias-vazio">
+        <div class="vazio-icon">
+            <i class="fa-solid fa-images"></i>
+        </div>
 
-                <a href="#">
-                    Ver todas
-                    <i class="fa-solid fa-arrow-right"></i>
-                </a>
+        <h3>Ainda não publicou nenhuma experiência</h3>
 
-            </div>
+        <p>
+            Partilhe fotos, vídeos e histórias das suas viagens
+            para inspirar outros viajantes.
+        </p>
 
+        <button type="button" class="btn-publicar">
+            <i class="fa-solid fa-plus"></i>
+            Criar primeira experiência
+        </button>
+    </div>
 
-            <!-- Estado vazio -->
-
-            <div class="experiencias-vazio">
-
-                <div class="vazio-icon">
-                    <i class="fa-solid fa-images"></i>
-                </div>
-
-                <h3>Ainda não publicou nenhuma experiência</h3>
-
-                <p>
-                    Partilhe fotos, vídeos e histórias das suas viagens
-                    para inspirar outros viajantes.
-                </p>
-
-                <button class="btn-publicar">
-                    <i class="fa-solid fa-plus"></i>
-                    Criar primeira experiência
-                </button>
-
-            </div>
-
-        </section>
+</section>
 
     </main>
 
 
     <!-- JavaScript -->
-    <script src="../js/paineis.js"></script>
+<script src="../js/Experiencias.js" defer></script>
+<script src="../js/paineis.js" defer></script>
 
 </body>
 </html>

@@ -86,9 +86,7 @@
                     Lembrar-me
                 </label>
 
-                <a href="#" id="esqueciSenha">
-                    Esqueci a palavra-passe
-                </a>
+                <a href="#" id="esqueciSenha">Esqueci a palavra-passe</a>
 
             </div>
 
@@ -113,6 +111,53 @@
 </div>
 
 
+
+
+<!-- MODAL DE RECUPERAÇÃO DA PALAVRA-PASSE -->
+<div class="modal" id="recuperarSenhaModal">
+    <div class="modal-content login-modal">
+
+        <span class="close-modal" id="fecharRecuperacao">&times;</span>
+
+        <div class="login-header">
+            <i class="fa-solid fa-key"></i>
+            <h2>Recuperar palavra-passe</h2>
+            <p>Introduza o email associado à sua conta.</p>
+        </div>
+
+        <form id="recuperarSenhaForm">
+
+            <div class="form-group">
+                <label for="emailRecuperacao">Email da conta</label>
+                <input type="email" id="emailRecuperacao"
+                       placeholder="Digite o seu email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="novaSenha">Nova palavra-passe</label>
+                <input type="password" id="novaSenha"
+                       minlength="8" placeholder="Nova palavra-passe" required>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmarNovaSenha">Confirmar palavra-passe</label>
+                <input type="password" id="confirmarNovaSenha"
+                       minlength="8" placeholder="Repita a palavra-passe" required>
+            </div>
+
+            <button type="submit" class="btn-entrar">
+                Alterar palavra-passe
+            </button>
+
+            <div class="login-register">
+                <p>Já se lembra?
+                    <a href="#" id="voltarAoLogin">Voltar ao login</a>
+                </p>
+            </div>
+
+        </form>
+    </div>
+</div>
 
 
     <!-- ================= MODAL DE CADASTRO ================= -->
@@ -355,12 +400,12 @@
         <nav id="mainNav">
             <ul>
                 <li><a href="#" class="active">Início</a></li>
-                <li><a href="pages/hoteis.html">Hotéis</a></li>
-                <li><a href="pages/experiencias.html">Experiências</a></li>
-                <li><a href="pages/pacotes.html">Pacotes</a></li>
-                <li><a href="pages/transportes.html">Transportes</a></li>
+                <li><a href="paineis/hoteis.html">Hotéis</a></li>
+                <li><a href="paineis/experiencia.html">Experiências</a></li>
+                <li><a href="paineis/pacotes.html">Pacotes</a></li>
+                <li><a href="paineis/transportes.html">Transportes</a></li>
                 <li><a href="#">Aluguer de Viaturas</a></li>
-                <li><a href="pages/restaurantes.html">Restaurantes</a></li>
+                <li><a href="paineis/restaurantes.html">Restaurantes</a></li>
                 <li class="dropdown">
                     <a href="#">Mais <i class="fa-solid fa-chevron-down"></i></a>
                 </li>
@@ -521,6 +566,9 @@
 
     </section>
 
+
+    
+
     <!-- Categorias -->
     <section class="categorias">
         <a href="#" class="categoria">
@@ -637,14 +685,23 @@
 
     </section>
 
-    <!--Guardar experiencias --> 
+<!-- Experiências partilhadas pelos viajantes -->
 <section class="feed-experiencias">
     <div class="destinos-header">
-        <h2>Experiências Dos Viajantes</h2>
-        <p partilhadas pela comunidade MozTrip></p>
+        <div>
+            <h2>Experiências dos viajantes</h2>
+            <p>Histórias e fotografias partilhadas pela comunidade MozTrip.</p>
+        </div>
+
+        <a href="paineis/experiencia.html" class="ver-todos">
+            Partilhar experiência
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
     </div>
-    <div id="feedExperiencias"></div>
-    </section>
+
+    <div id="feedExperiencias" class="feed-grid"></div>
+</section>
+
 
     <!-- Faixa de confiança -->
     <section class="confianca">
