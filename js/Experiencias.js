@@ -175,12 +175,19 @@ function inicializarFormularioExperiencia() {
             utilizador = {};
         }
 
-       const novaExperiencia = {
+const novaExperiencia = {
     id: Date.now(),
-autor: utilizador.nome || utilizador.email || "Viajante MozTrip",
+
+    autor: utilizador.nome || utilizador.email || "Viajante MozTrip",
+
+    // Guardar o email para identificar o dono da publicação
+    email: utilizador.email || "",
+    autorEmail: utilizador.email || "",
+
     titulo: titulo,
     descricao: descricao,
     imagem: imagemSelecionada,
+
     data: new Date().toLocaleDateString("pt-PT")
 };
 
@@ -205,6 +212,8 @@ console.log(
             mensagem.textContent = "Experiência publicada com sucesso!";
 
             carregarExperiencias();
+            carregarMinhasExperiencias();
+            
         } catch (erro) {
             console.error("Erro ao guardar experiência:", erro);
 
@@ -312,5 +321,5 @@ function carregarMinhasExperiencias() {
 document.addEventListener("DOMContentLoaded", () => {
     carregarExperiencias();
     inicializarFormularioExperiencia();
-    
+    carregarMinhasExperiencias();
 });

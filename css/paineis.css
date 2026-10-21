@@ -732,3 +732,128 @@ a {
         height: 140px;
     }
 }
+
+
+
+/* =====================================
+   MINHAS EXPERIÊNCIAS — CARDS MOZTRIP
+===================================== */
+
+#listaExperiencias.feed-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    width: 100%;
+    margin-top: 24px;
+}
+
+/* Card individual */
+#listaExperiencias .feed-experiencia-card {
+    position: relative;
+    min-width: 0;
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    border-radius: var(--raio, 16px);
+    background: #011524;
+    box-shadow: 0 6px 18px rgba(11, 37, 69, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito ao passar o rato */
+#listaExperiencias .feed-experiencia-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(11, 37, 69, 0.2);
+}
+
+/* Fotografia ocupa todo o card */
+#listaExperiencias .feed-experiencia-imagem {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+#listaExperiencias .feed-experiencia-card:hover
+.feed-experiencia-imagem {
+    transform: scale(1.05);
+}
+
+/* Gradiente para facilitar a leitura */
+#listaExperiencias .feed-experiencia-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.9) 0%,
+        rgba(0, 0, 0, 0.45) 42%,
+        transparent 75%
+    );
+    pointer-events: none;
+}
+
+/* Título e descrição sobre a fotografia */
+#listaExperiencias .feed-experiencia-conteudo {
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+    color: white;
+}
+
+/* Título */
+#listaExperiencias .feed-experiencia-conteudo h2,
+#listaExperiencias .feed-experiencia-conteudo h3 {
+    color: white;
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.35;
+    margin-bottom: 8px;
+}
+
+/* Descrição */
+#listaExperiencias .feed-experiencia-conteudo p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Botões de gestão das próprias publicações */
+#listaExperiencias .feed-experiencia-conteudo button {
+    position: relative;
+    z-index: 3;
+    padding: 8px 12px;
+    margin: 4px 5px 0 0;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* Responsividade */
+@media (max-width: 1000px) {
+    #listaExperiencias.feed-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    #listaExperiencias.feed-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    #listaExperiencias .feed-experiencia-card {
+        aspect-ratio: 4 / 5;
+    }
+}
