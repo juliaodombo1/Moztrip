@@ -298,22 +298,26 @@ function carregarMinhasExperiencias() {
         const acoes = document.createElement("div");
         acoes.className = "acoes-experiencia";
 
-        const editar = document.createElement("button");
-        editar.type = "button";
-        editar.textContent = "Editar";
-        editar.dataset.acao = "editar";
-        editar.dataset.id = experiencia.id;
+        
+const editar = document.createElement("button");
+editar.type = "button";
+editar.textContent = "Editar";
+editar.dataset.acao = "editar";
+editar.dataset.id = experiencia.id;
+editar.classList.add("btn-editar");
 
-        const apagar = document.createElement("button");
-        apagar.type = "button";
-        apagar.textContent = "Apagar";
-        apagar.dataset.acao = "apagar";
-        apagar.dataset.id = experiencia.id;
+const apagar = document.createElement("button");
+apagar.type = "button";
+apagar.textContent = "Apagar";
+apagar.dataset.acao = "apagar";
+apagar.dataset.id = experiencia.id;
+apagar.classList.add("btn-apagar");
 
-        acoes.append(editar, apagar);
-        conteudo.append(titulo, descricao, acoes);
-        card.append(imagem, conteudo);
-        lista.appendChild(card);
+acoes.append(editar, apagar);
+conteudo.append(titulo, descricao, acoes);
+card.append(imagem, conteudo);
+lista.appendChild(card);
+
     });
 }
 

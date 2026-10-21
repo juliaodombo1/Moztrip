@@ -114,7 +114,7 @@ function actualizarContadorExperiencias() {
         return experiencia.email?.toLowerCase() === emailUtilizador;
     });
 
-    // Actualiza o card
+    // Actualiza o cardgit
     contador.textContent = minhasExperiencias.length;
 }
 
